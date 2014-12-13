@@ -24,7 +24,7 @@ class Parser
     end
 
     annotated_file = @definition.annotate(@lines)
-    #File.write(@file, annotated_file)
+    File.write(@file, annotated_file)
   end
 
   private
