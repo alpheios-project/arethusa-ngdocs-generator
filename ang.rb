@@ -17,7 +17,7 @@ class Parser
 
     i = @definition.line_no
 
-    unless @lines[i].end_with?('function() {')
+    unless @lines[i].match(/function.\(\) {/)
       while (next_line = @lines[i + 1]) && next_line !~ /^\s*function/
         dependency = next_line.scan(/[\$\w]/).join
         @definition.add_dependency(dependency)
