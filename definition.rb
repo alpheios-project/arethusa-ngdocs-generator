@@ -21,7 +21,6 @@ class Definition
     %w{ function property }.each do |type|
       parse_child_annotation(lines, type)
     end
-    puts lines.join("\n")
   end
 
   private
