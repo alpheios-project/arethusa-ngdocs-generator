@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 class Parser
   def initialize(file)
     @file = file
