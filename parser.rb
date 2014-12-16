@@ -6,7 +6,6 @@ class Parser
 
   def annotate
     @lines.each_with_index do |line, i|
-      return if line =~ /@ngdoc/
       next unless @definition = get_definition(line, i)
       break;
     end

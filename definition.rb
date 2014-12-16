@@ -17,7 +17,10 @@ class Definition
   end
 
   def annotate(lines)
-    lines.insert(@line_no, annotation)
+    unless class_annotation_present?(lines)
+      lines.insert(@line_no, annotation)
+    end
+
     %w{ function property }.each do |type|
       parse_child_annotation(lines, type)
     end
@@ -25,6 +28,10 @@ class Definition
   end
 
   private
+
+  def class_annotation_present?(lines)
+    lines.take(8).find { |l| l == " * #{name}"}
+  end
 
   def as_comments(lines, indent = "")
     [
