@@ -97,7 +97,7 @@ class Definition
   end
 
   PARENT_VOCAB = {
-    'function' => 'member',
+    'function' => 'method',
     'property' => 'property'
   }
   def parent(type)
