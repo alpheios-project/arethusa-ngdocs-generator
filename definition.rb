@@ -89,8 +89,12 @@ class Definition
     "@name #{short ? '' : "#{link}#"}#{fn}"
   end
 
+  PARENT_VOCAB = {
+    'function' => 'member',
+    'property' => 'property'
+  }
   def parent(type)
-    "@#{type}Of #{link}"
+    "@#{PARENT_VOCAB[type]}Of #{link}"
   end
 
   def description
